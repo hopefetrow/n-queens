@@ -1,6 +1,6 @@
 # n-queens
 
-### Developers
+### Developer
   Hope Fetrow 
   
 ### Objective
