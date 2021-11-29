@@ -9,3 +9,6 @@
 ### Description
   The solutions to objective are found with use of recursion and backtracking. 
 
+### What I learned 
+  The use of backtracking with a promising method can greatly reduce the number of nodes visited while searching for a solution. 
+  
