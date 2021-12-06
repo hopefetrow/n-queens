@@ -7,8 +7,11 @@ Given an n x n chessboard, how many different ways can you place n queens, such 
 ### Description  
 Backtracking algorithm is used used to reduce upper bound on n-Queens problem. The Monte Carlo Estimate algorithm is also implemented. 
 
+### Input 
+Number of queens or 0 to quit 
+
 ### Output
-An array of length n where the indices correspond to the row number and the values correspond to the column number the queen for that row is placed in. 
+Each solution consists of an array of integers where each integer represents the column choice for the queen in the row corresponding to array index in the solution.
 
 # What I learned 
 How to implement backtracking with a promising method and how it can greatly reduce the search time for DFS in some cases, in this case from O(n^n) to O(n!). How the Monte Carlos Estimate can determine if backtracking is a good choice for an algorithm. 
