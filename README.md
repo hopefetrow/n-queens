@@ -1,17 +1,15 @@
 # n-queens
+A program written for my CS 4310 - _______ course. 
 
-### Developer
-  Hope Fetrow 
+### Problem
+Given an n x n chessboard, how many different ways can you place n queens, such that no two queens are in the same row, column, and diagonal. 
   
-### Objective
-  Given an n x n chessboard, how many different ways can you place n queens, such that none of them are attacking each other?
+### Description  
+A backtracking algorithm is used. 
 
-### Description
-  The solutions to objective are found with use of recursion and backtracking. 
+### Output
+An array of length n where the indices correspond to the row number and the values correspond to the column number the queen for that row is placed in. 
 
-### What I learned 
-  The use of backtracking with a promising method can greatly reduce the number of nodes visited while searching for a solution. 
+# What I learned 
+How to implement backtracking with a promising method and how it can greatly reduce the search time for DFS in some cases, in this case from O(n^n) to O(n!).  
   
-
-### To run code: 
-  Copy and paste the contents of nqueens.java into any IDE and change package name at top accordindly. 
