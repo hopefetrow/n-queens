@@ -1,4 +1,4 @@
-# n-queens
+# N-queens
 A program written for my CS 4310 - Design and Analysis of Algorithms course. 
 
 ### Problem
