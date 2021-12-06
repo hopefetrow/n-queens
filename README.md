@@ -5,7 +5,7 @@ A program written for my CS 4310 - Design and Analysis of Algorithms course.
 Given an n x n chessboard, how many different ways can you place n queens, such that no two queens are in the same row, column, and diagonal. 
   
 ### Description  
-Backtracking algorithm is used used to reduce upper bound on n-Queens problem. The Monte Carlo Estimate algorithm is also implemented. 
+Backtracking algorithm is used used to reduce upper bound on n-Queens problem. The Monte Carlo Estimate algorithm is also implemented to test if backtracking was a good choice for the n-queens problem. 
 
 ### Input 
 Number of queens or 0 to quit 
