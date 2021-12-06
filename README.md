@@ -12,3 +12,6 @@
 ### What I learned 
   The use of backtracking with a promising method can greatly reduce the number of nodes visited while searching for a solution. 
   
+
+# To run code: 
+  Copy and paste the contents of nqueens.java into any IDE and change package name at top accordindly. 
