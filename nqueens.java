@@ -19,31 +19,30 @@ public class Main {
 	static int n;
 
 	/**
-	 * Produces all solutions to the n-Queens problem using recursion and
-	 * backtracking. The solutions found include symmetrical or isomorphic
-	 * solutions. Before finding solutions, the estimated number of nodes that will
-	 * be checked backtracking is found using the Monte Carlo technique.
+	 * This program produces all solutions to the n-Queens problem with DFS and backtracking. 
+	 * Before finding solutions, the estimated number of nodes that will be checked 
+	 * backtracking is found using the Monte Carlo technique. The estimated number of 
+	 * nodes is the number of nodes that will be in the pruned state space tree created 
+	 * implicitly during backtracking or the number of nodes that are checked before all
+	 * solutions are found. 
 	 *
-	 * The estimated number of nodes is the number of nodes that will be in the
-	 * pruned state space tree created implicitly during backtracking or the number
-	 * of nodes that are checked before all solutions are found.
 	 *
-	 * This estimate is printed next to the actual number of nodes checked while
-	 * backtracking.
 	 *
-	 * All solutions are also printed. Each solution consists of an array of
-	 * integers where each integer represents the column choice for the queen in the
+	 * OUTPUT: 
+	 *
+	 * The number of solutions along with the Monte Carlo estimate, the Actual number of nodes 
+	 * checked while searching, and the number of promising nodes found is printed. 
+	 *
+	 * If n<10, the solutions are printed while searching. 	Each solution consists of an 
+	 * array of integers where each integer represents the column choice for the queen in the
 	 * row corresponding to array index in the solution.
 	 *
-	 *
-	 * For example:
-	 *
-	 * The solution [2 4 1 3] for 4-queens problem where columns and rows are
+	 * For example, the solution [2 4 1 3] for 4-queens problem where columns and rows are
 	 * numbered 1 to n:
-	 *
-	 * Queen 1 at index 0 is in row 1, column 2 of the chess board. Queen 2 at index
-	 * 1 is in row 2, column 4. Queen 3 at index 2 is in row 3, column 1. Queen 4 at
-	 * index 3 is in row 4, column 3.
+	 * 	Queen 1 at index 0 is in row 1, column 2. 
+	 *	Queen 2 at index 1 is in row 2, column 4. 
+	 *	Queen 3 at index 2 is in row 3, column 1. 
+	 *	Queen 4 at index 3 is in row 4, column 3.
 	 *
 	 *
 	 *
@@ -56,7 +55,7 @@ public class Main {
 		n = input.nextInt();
 		System.out.println();
 
-        // while user input is an int greater than 0
+        	// while user input is an int greater than 0
 		while (n > 0) { 
 			prom = 0;
 			backChecked = 0;
