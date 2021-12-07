@@ -56,28 +56,22 @@ public class Main {
 		n = input.nextInt();
 		System.out.println();
 
-		while (n > 0) { // while user input is an int greater than 0
+        // while user input is an int greater than 0
+		while (n > 0) { 
 			prom = 0;
 			backChecked = 0;
 			solutions = 0;
-			// to store one solution
+			// for finding and storing one solution
 			int[] partialSol = new int[n];
-			// get estimate
+			
+			// function call to get estimate
 			long est = estimate(n);
-
-			System.out.println("[Solutions]: ");
-			File file = new File(
-					"output.txt");
-			FileWriter fr = null;
-
+	
 			try {
-				fr = new FileWriter(file);
 				// function call to solve
 				solve(partialSol, 0, fr);
-				fr.close();
-
-			} catch (IOException e) {
-				System.out.println("Error writing to file");
+			} catch (Exception e) {
+				System.out.println("Error while solving problem");
 				e.printStackTrace();
 			}
 
@@ -99,21 +93,16 @@ public class Main {
 	}
 
 	/**
-	 * Finds a placement for a queen or nothing happens if no queen found.
+	 * Finds a placement for a queen, if no queen found, nothing happens.
 	 *
 	 * @param x the current partial solution Its length is the problem size.
 	 * @param k the next position to be assigned.
 	 */
-	public static void solve(int[] x, int k, FileWriter fr) {
-		// uncomment below to write solutions to a file:
-		// File file = new File(
-		// "C:\\Users\\hope_\\eclipse-workspace\\NQueensBacktracking\\src\\package_NQueens\\output.txt");
-		// FileWriter fr = null;
+	public static void solve(int[] x, int k) {
 		try {
-			// fr = new FileWriter(file);
-
-			if (k >= x.length) { // all four queens have been placed
-				if (n < 8) {
+		    // if all four queens have been placed
+			if (k >= x.length) { 
+				if (n < 10) {
 					// print the solution
 					printSolution(x);
 				} else {
@@ -126,8 +115,7 @@ public class Main {
 				// increment solution counter
 				solutions++;
 			} else
-				// see if queen in (i+1)st row can be
-				// positioned in each of the n columns
+				// see if queen in row (i+1) can be placed for each of the n columns
 				for (int i = 1; i <= x.length; i++) {
 					x[k] = i;
 					// increment nodes checked during backtracking counter
@@ -137,7 +125,7 @@ public class Main {
 						// add to promising nodes count
 						prom++;
 						// then go down in tree
-						solve(x, k + 1,fr);
+						solve(x, k + 1);
 					}
 				}
 		} catch (Exception e) {
@@ -154,13 +142,10 @@ public class Main {
 	 * @param i the position to be tested for conflict with earlier values
 	 */
 	public static boolean promising(int[] x, int i) {
-		// check if any queen threatens
-		// the queen in the ith row
+		// check if any queen threatens the queen in the ith row
 		for (int k = 0; k < i; k++) {
-			// there is a queen with col num equal
-			if (x[i] == x[k] || // queen already in col
-					Math.abs(x[i] - x[k]) == i - k) { // queen in diagonal
-				// difference in columns is
+			// there is already a queen in the col or diagonal 
+			if (x[i] == x[k] || Math.abs(x[i] - x[k]) == i - k) { 
 				return false;
 			}
 		}
@@ -168,7 +153,7 @@ public class Main {
 	}
 
 	/**
-	 * Uses the Monte Carlo technique to estimate the number of nodes that will be
+	 * Uses the monte carlo technique to estimate the number of nodes that will be
 	 * in the pruned state space tree, or the number of nodes that will be checked
 	 * before finding all possible solutions. It uses the same promise method that
 	 * the backtracking algorithm does.
@@ -186,19 +171,26 @@ public class Main {
 		// for storing promising children (length of factor value for n)
 		promChildren = new int[n];
 		while (m != 0 && i != n) {
-			mprod = mprod * m; // product of promising children
-			numNodes = numNodes + mprod * n; // n is number of children of t
+		    // product of promising children
+			mprod = mprod * m;
+			// n is number of children of t
+			numNodes = numNodes + mprod * n; 
 			i++;
 			m = 0;
 			// determine promising children.
 			for (j = 1; j < n; j++) {
-				col[i] = j; // set pointer to current row
-				if (promising(col, i) == true) { // if current row is promising
-					m++; // increment number of promising children
-					promChildren[(int) m] = j; // add to set of promising children
+			    // set pointer to current row
+				col[i] = j; 
+				// if current row is promising
+				if (promising(col, i) == true) { 
+				    // increment number of promising children
+					m++; 
+					// add to set of promising children
+					promChildren[(int) m] = j;
 				}
 			}
-			if (m != 0) { // if there are promising children
+			// if there are promising children
+			if (m != 0) { 
 				// randomly selection from promising children
 				int rnd = new Random().nextInt(promChildren.length);
 				j = promChildren[rnd];
