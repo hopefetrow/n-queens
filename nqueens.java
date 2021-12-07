@@ -4,8 +4,32 @@ import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 /**
-@contrib Hope Fetrow
-*/
+ * This program produces all solutions to the n-Queens problem with DFS and backtracking. 
+ * Before finding solutions, the estimated number of nodes that will be checked 
+ * backtracking is found using the Monte Carlo technique. The estimated number of 
+ * nodes is the number of nodes that will be in the pruned state space tree created 
+ * implicitly during backtracking or the number of nodes that are checked before all
+ * solutions are found. 
+ *
+ *
+ *
+ * OUTPUT: 
+ *
+ * The number of solutions along with the Monte Carlo estimate, the Actual number of nodes 
+ * checked while searching, and the number of promising nodes found is printed. 
+ *
+ * If n<10, the solutions are printed while searching. 	Each solution consists of an 
+ * array of integers where each integer represents the column choice for the queen in the
+ * row corresponding to array index in the solution.
+ *
+ * For example, the solution [2 4 1 3] for 4-queens problem where columns and rows are
+ * numbered 1 to n:
+ * 	Queen 1 at index 0 is in row 1, column 2. 
+ *	Queen 2 at index 1 is in row 2, column 4. 
+ *	Queen 3 at index 2 is in row 3, column 1. 
+ *	Queen 4 at index 3 is in row 4, column 3.
+ *
+ */
 public class Main {
 	static int col[] = null;
 	// for counts
@@ -18,35 +42,7 @@ public class Main {
 	static int[] promChildren;
 	static int n;
 
-	/**
-	 * This program produces all solutions to the n-Queens problem with DFS and backtracking. 
-	 * Before finding solutions, the estimated number of nodes that will be checked 
-	 * backtracking is found using the Monte Carlo technique. The estimated number of 
-	 * nodes is the number of nodes that will be in the pruned state space tree created 
-	 * implicitly during backtracking or the number of nodes that are checked before all
-	 * solutions are found. 
-	 *
-	 *
-	 *
-	 * OUTPUT: 
-	 *
-	 * The number of solutions along with the Monte Carlo estimate, the Actual number of nodes 
-	 * checked while searching, and the number of promising nodes found is printed. 
-	 *
-	 * If n<10, the solutions are printed while searching. 	Each solution consists of an 
-	 * array of integers where each integer represents the column choice for the queen in the
-	 * row corresponding to array index in the solution.
-	 *
-	 * For example, the solution [2 4 1 3] for 4-queens problem where columns and rows are
-	 * numbered 1 to n:
-	 * 	Queen 1 at index 0 is in row 1, column 2. 
-	 *	Queen 2 at index 1 is in row 2, column 4. 
-	 *	Queen 3 at index 2 is in row 3, column 1. 
-	 *	Queen 4 at index 3 is in row 4, column 3.
-	 *
-	 *
-	 *
-	 */
+	
 	public static void main(String[] args) {
 
 		// get user input for number of queens
