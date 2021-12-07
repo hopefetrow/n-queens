@@ -60,9 +60,9 @@ public class Main {
 			prom = 0;
 			backChecked = 0;
 			solutions = 0;
-			// for finding and storing one solution
+			// to store one solution
 			int[] partialSol = new int[n];
-			// function call to get estimate
+			// get estimate
 			long est = estimate(n);
 
 			System.out.println("[Solutions]: ");
