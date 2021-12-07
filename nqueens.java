@@ -5,7 +5,6 @@ import java.util.Random;
 import java.util.Scanner;
 /**
 @contrib Hope Fetrow
-
 */
 public class Main {
 	static int col[] = null;
@@ -57,7 +56,7 @@ public class Main {
 		n = input.nextInt();
 		System.out.println();
 
-		while (n > 0) { // user input is an int greater than 0
+		while (n > 0) { // while user input is an int greater than 0
 			prom = 0;
 			backChecked = 0;
 			solutions = 0;
@@ -79,7 +78,6 @@ public class Main {
 
 			} catch (IOException e) {
 				System.out.println("Error writing to file");
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
@@ -110,7 +108,7 @@ public class Main {
 	 * @param k the next position to be assigned.
 	 */
 	public static void solve(int[] x, int k, FileWriter fr) {
-		// for writing solutions to
+		// uncomment below to write solutions to a file:
 		// File file = new File(
 		// "C:\\Users\\hope_\\eclipse-workspace\\NQueensBacktracking\\src\\package_NQueens\\output.txt");
 		// FileWriter fr = null;
@@ -124,11 +122,9 @@ public class Main {
 				} else {
 					// write solution
 					for (int i = 0; i < x.length; i++) {
-
 						fr.write(" " + x[i] + " ");
 					}
 					fr.write("");
-
 				}
 				// increment solution counter
 				solutions++;
