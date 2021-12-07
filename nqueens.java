@@ -81,9 +81,6 @@ public class Main {
 				e.printStackTrace();
 			}
 
-			// function call to solve
-			//solve(partialSol, 0, fr);
-
 			// printing to console
 			System.out.println("\n\n[Number of solutions]: " + solutions);
 			System.out.println("\n-----------------------------------------------------\n");
@@ -102,7 +99,7 @@ public class Main {
 	}
 
 	/**
-	 * Finds a placement for a queen, if no queen found, nothing happens.
+	 * Finds a placement for a queen or nothing happens if no queen found.
 	 *
 	 * @param x the current partial solution Its length is the problem size.
 	 * @param k the next position to be assigned.
@@ -143,8 +140,6 @@ public class Main {
 						solve(x, k + 1,fr);
 					}
 				}
-
-
 		} catch (Exception e) {
 			System.out.println("Error writing to file ");
 		}
@@ -173,7 +168,7 @@ public class Main {
 	}
 
 	/**
-	 * Uses the monte carlo technique to estimate the number of nodes that will be
+	 * Uses the Monte Carlo technique to estimate the number of nodes that will be
 	 * in the pruned state space tree, or the number of nodes that will be checked
 	 * before finding all possible solutions. It uses the same promise method that
 	 * the backtracking algorithm does.
