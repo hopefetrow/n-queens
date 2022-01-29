@@ -1,6 +1,9 @@
 # N-queens
 Given an n x n chessboard, how many different ways can you place n queens, such that no two queens are in the same row,       column, and diagonal.
 
+<h2> Purpose </h2>
+Final Project for CS 4310 - Design and Analysis of Algorithms
+
 <h2> Objective </h2>
 Solve with a backtracking algorithm that uses a promising function. Make a timing graph Time vs. n. Include graph and observations in your report. Implement the Monte Carlo estimate() algorithm for estimating the number of nodes in the tree. Keep track of the actual number of nodes generated when backtracking and compare to the estimated number.  
 
@@ -26,9 +29,6 @@ Copy and paste the contents of nqueens.java into editor of a java IDE or online 
 
 <h2> Developers </h2>
 Hope Fetrow 
-
-<h2> Purpose </h2>
-Final Project for CS 4310 - Design and Analysis of Algorithms
 
 <h2> What I learned </h2>
 How to implement backtracking with a promising method and how it can greatly reduce the search time for DFS in some cases, in this case from O(n^n) to O(n!). How the Monte Carlos Estimate can determine if backtracking is a good choice for an algorithm. 
