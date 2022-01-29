@@ -1,7 +1,7 @@
 # N-queens
 Given an n x n chessboard, how many different ways can you place n queens, such that no two queens are in the same row,       column, and diagonal.
 
-#### Developers 
+### Developers 
 Hope Fetrow 
 
 ### Purpose
@@ -15,10 +15,10 @@ The promising function prevents the continuation down a dead end path by only co
 
 The estimate() function uses the Monte Carlo method and can be used to determine if backtracking would be an efficient choice for solving a problem. In this implementation, estimate() returns the estimated number of nodes that would be checked to find all possible solutions. 
 
-### Input 
+#### Input 
 Number of queens or 0 to quit 
 
-### Output
+#### Output
 The solution(s), the total number of solutions, the actual number of nodes generated, and the estimated number of nodes that would be generated. 
    
 Each solution consists of an array of integers where each integer represents the column choice for the queen in the row corresponding to array index in the solution and the results from the Monte Carlo estimate. 
