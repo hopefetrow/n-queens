@@ -9,10 +9,10 @@ The promising function prevents the continuation down a dead end path by only co
 
 The estimate() function uses the Monte Carlo method and can be used to determine if backtracking would be an efficient choice for solving a problem. In this implementation, estimate() returns the estimated number of nodes that would be checked to find all possible solutions. 
 
-<h4><b> Input: </h3>
+<h4><strong> Input: </strong></h4>
 Number of queens or 0 to quit 
 
-<h4><b> Output </b></h5>
+<h4><strong> Output: </strong></h4>
 The solution(s), the total number of solutions, the actual number of nodes generated, and the estimated number of nodes that would be generated. 
    
 Each solution consists of an array of integers where each integer represents the column choice for the queen in the row corresponding to array index in the solution and the results from the Monte Carlo estimate. For Example, 
