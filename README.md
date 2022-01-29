@@ -1,16 +1,17 @@
 # N-queens
 Given an n x n chessboard, how many different ways can you place n queens, such that no two queens are in the same row,       column, and diagonal.
 
-<h3> Objective </h3>
+<h2> Objective </h2>
 Solve with a backtracking algorithm that uses a promising function. Make a timing graph Time vs. n. Include graph and observations in your report. Implement the Monte Carlo estimate() algorithm for estimating the number of nodes in the tree. Keep track of the actual number of nodes generated when backtracking and compare to the estimated number.  
 
-<h3> Description </h3>
+<h2> Description </h2>
 The promising function prevents the continuation down a dead end path by only continuing traversal down path if the node is promising. If a node isn’t promising, then it isn’t travelled to and a different path is chosen, where the node is promising. This drastically reduces the number of nodes that are checked while finding all possible solutions. 
 
 The estimate() function uses the Monte Carlo method and can be used to determine if backtracking would be an efficient choice for solving a problem. In this implementation, estimate() returns the estimated number of nodes that would be checked to find all possible solutions. 
-<h4><strong> Input: </strong></h4>
-Number of queens or 0 to quit 
-<h4><strong> Output: </strong></h4>
+<br>
+&em;<h3><strong> Input: </strong></h3>
+&em;Number of queens or 0 to quit 
+<h3><strong> Output: </strong></h3>
 The solution(s), the total number of solutions, the actual number of nodes generated, and the estimated number of nodes that would be generated. Each 		solution consists of an array of integers where each integer represents the column choice for the queen in the row corresponding to array index in the 		solution and the results from the Monte Carlo estimate. For example, <br><br>
 
 The solution [2 4 1 3] for the 4-queens problem is saying:<br>
@@ -20,10 +21,10 @@ The solution [2 4 1 3] for the 4-queens problem is saying:<br>
 	<li>Queen 3 at index 2 is in row 3, column 1. </li>
 	<li>Queen 4 at index 3 is in row 4, column 3. </li>
 </ul>
-<h3> Installation </h3>
+<h2> Installation </h2>
 Copy and paste the contents of nqueens.java into editor of a java IDE or online java compiler (https://www.onlinegdb.com/online_java_compiler). 
 
-<h3> Developers </h3>
+<h2> Developers </h2>
 Hope Fetrow 
 
 <h3> Purpose </h3>
