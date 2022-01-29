@@ -15,22 +15,21 @@ The promising function prevents the continuation down a dead end path by only co
 
 The estimate() function uses the Monte Carlo method and can be used to determine if backtracking would be an efficient choice for solving a problem. In this implementation, estimate() returns the estimated number of nodes that would be checked to find all possible solutions. 
 
-#### Input 
+### Input 
 Number of queens or 0 to quit 
 
-#### Output
+### Output
 The solution(s), the total number of solutions, the actual number of nodes generated, and the estimated number of nodes that would be generated. 
    
 Each solution consists of an array of integers where each integer represents the column choice for the queen in the row corresponding to array index in the solution and the results from the Monte Carlo estimate. 
     
-    	Solution explanation:
-		 
-		For solution [2 4 1 3] for the 4-queens problem:
-	  
-		Queen 1 at index 0 is in row 1, column 2 of the chess board. 
-		Queen 2 at index 1 is in row 2, column 4. 
-		Queen 3 at index 2 is in row 3, column 1. 
-		Queen 4 at index 3 is in row 4, column 3.
+   Solution explanation:
+   
+   For solution [2 4 1 3] for the 4-queens problem:
+	Queen 1 at index 0 is in row 1, column 2 of the chess board. 
+	Queen 2 at index 1 is in row 2, column 4. 
+	Queen 3 at index 2 is in row 3, column 1. 
+	Queen 4 at index 3 is in row 4, column 3.
 
 ### Installation 
 Copy and paste the contents of nqueens.java into editor of a java IDE or online java compiler (https://www.onlinegdb.com/online_java_compiler). 
