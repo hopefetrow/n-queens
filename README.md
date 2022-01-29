@@ -18,14 +18,14 @@ The solution(s), the total number of solutions, the actual number of nodes gener
    
 Each solution consists of an array of integers where each integer represents the column choice for the queen in the row corresponding to array index in the solution and the results from the Monte Carlo estimate. 
     
-    For example:
+    	Solution example:
 		 
-	The solution [2 4 1 3] for 4-queens problem where columns and rows are numbered 1 to n:
+		For the solution [2 4 1 3] for the 4-queens problem:
 	  
-	Queen 1 at index 0 is in row 1, column 2 of the chess board. 
-	Queen 2 at index 1 is in row 2, column 4. 
-	Queen 3 at index 2 is in row 3, column 1. 
-	Queen 4 at index 3 is in row 4, column 3.
+		Queen 1 at index 0 is in row 1, column 2 of the chess board. 
+		Queen 2 at index 1 is in row 2, column 4. 
+		Queen 3 at index 2 is in row 3, column 1. 
+		Queen 4 at index 3 is in row 4, column 3.
 
 ### Installation 
 Copy and paste the contents of nqueens.java into editor of a java IDE or online java compiler (https://www.onlinegdb.com/online_java_compiler). 
