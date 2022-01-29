@@ -4,7 +4,7 @@ Given an n x n chessboard, how many different ways can you place n queens, such 
 ### Developers 
 Hope Fetrow 
 
-### Purpose
+<h2> Purpose </h2>
 Final Project for CS 4310 - Design and Analysis of Algorithms
 
 ### Objective
