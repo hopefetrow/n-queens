@@ -9,24 +9,35 @@ import java.util.Scanner;
  * Before finding solutions, the estimated number of nodes that will be checked 
  * before finding all solutions, or the number of nodes that will be in the pruned state space tree, 
  * is obtained using the Monte Carlo technique. 
+ *
  * 
+ * 
+ * INPUT: 
+ * The number of queens to find placement for which corresponds to number of rows and columns 
+ * Entering 4 results in finding all solutions to placing 4 queens on a 4x4 chessboard that are not in the same diagonal,row, or column. 
  *
  *
  * OUTPUT: 
+ * 	The solutions, the total number of solutions, the Monte Carlo estimate for number of nodes that will be checked, 
+ *	and the actual number of nodes checked while searching is printed. 
  *
- * The number of solutions along with the Monte Carlo estimate, the Actual number of nodes 
- * checked while searching, and the number of promising nodes found is printed. 
+ * 	Each solution consists of an array of integers where each value represents the column placement for the queen in that
+ * 	row number (which corresponds to the index). 
+ *		
+ *		For example, the solution [2 4 1 3] for 4-queens problem represents: 
+ * 	
+ *		Queen 1 at index 0 is in row 1, column 2 
+ *		Queen 2 at index 1 is in row 2, column 4
+ *		Queen 3 at index 2 is in row 3, column 1
+ *		Queen 4 at index 3 is in row 4, column 3
  *
- * If n<10, the solutions are printed while searching. 	Each solution consists of an 
- * array of integers where each integer represents the column choice for the queen in the
- * row corresponding to array index in the solution.
  *
- * For example, the solution [2 4 1 3] for 4-queens problem where columns and rows are
- * numbered 1 to n:
- * 	Queen 1 at index 0 is in row 1, column 2. 
- *	Queen 2 at index 1 is in row 2, column 4. 
- *	Queen 3 at index 2 is in row 3, column 1. 
- *	Queen 4 at index 3 is in row 4, column 3.
+ *
+ *
+ *
+ * @author Hope Fetrow
+ * @date June 2021
+ *
  *
  */
 public class Main {
@@ -79,8 +90,8 @@ public class Main {
 			
 			// grab user input
 			n = input.nextInt();
-			
 		}
+		input.close();
 	}
 
 	/**
@@ -186,6 +197,8 @@ public class Main {
 
 	/**
 	 * Prints a solution to the n-queens problem
+	 * 
+	 * @param x a solution consisting of the queens column placement, where each index represents the corresponding row/queen for that row (row # = index #)
 	 */
 	public static void printSolution(int[] x) {
 		for (int i = 0; i < x.length; i++) {
