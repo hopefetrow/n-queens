@@ -4,13 +4,12 @@ import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 /**
- * This program produces all solutions to the n-Queens problem with DFS and backtracking. 
+ * This program produces all solutions to the n-Queens problem using DFS with backtracking. 
+ * 
  * Before finding solutions, the estimated number of nodes that will be checked 
- * backtracking is found using the Monte Carlo technique. The estimated number of 
- * nodes is the number of nodes that will be in the pruned state space tree created 
- * implicitly during backtracking or the number of nodes that are checked before all
- * solutions are found. 
- *
+ * before finding all solutions, or the number of nodes that will be in the pruned state space tree, 
+ * is obtained using the Monte Carlo technique. 
+ * 
  *
  *
  * OUTPUT: 
