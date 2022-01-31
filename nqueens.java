@@ -29,7 +29,6 @@ import java.util.Scanner;
  * 	row number (which corresponds to the index). 
  *		
  *	For example, the solution [2 4 1 3] for 4-queens problem represents: 
- * 	
  *		Queen 1 at index 0 is in row 1, column 2 
  *		Queen 2 at index 1 is in row 2, column 4
  *		Queen 3 at index 2 is in row 3, column 1
