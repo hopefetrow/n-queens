@@ -4,41 +4,42 @@ import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 /**
- * This program produces all solutions to the n-Queens problem using DFS with backtracking. 
- * 
- * Before finding solutions, the estimated number of nodes that will be checked 
- * before finding all solutions, or the number of nodes that will be in the pruned state space tree, 
- * is obtained using the Monte Carlo technique. 
+ * DESCRIPTION:
  *
+ *	This program produces all solutions to the n-Queens problem using DFS with backtracking. 
  * 
+ * 	Before finding solutions, the estimated number of nodes that will be checked 
+ * 	before finding all solutions, or the number of nodes that will be in the pruned state space tree, 
+ *	is obtained using the Monte Carlo technique. 
+ *
  * 
  * INPUT: 
- * The number of queens to find placement for which corresponds to number of rows and columns 
- * Entering 4 results in finding all solutions to placing 4 queens on a 4x4 chessboard that are not in the same diagonal,row, or column. 
+ * 
+ *	The number of queens to find placement for which corresponds to number of rows and columns 
+ *	Entering 4 results in finding all solutions to placing 4 queens on a 4x4 chessboard that are not 
+ *	in the same diagonal,row, or column. 
  *
  *
- * OUTPUT: 
- * 	The solutions, the total number of solutions, the Monte Carlo estimate for number of nodes that will be checked, 
+ * OUTPUT:
+ *  
+ *	The solutions, the total number of solutions, the Monte Carlo estimate for number of nodes that will be checked, 
  *	and the actual number of nodes checked while searching is printed. 
  *
  * 	Each solution consists of an array of integers where each value represents the column placement for the queen in that
  * 	row number (which corresponds to the index). 
  *		
- *		For example, the solution [2 4 1 3] for 4-queens problem represents: 
+ *	For example, the solution [2 4 1 3] for 4-queens problem represents: 
  * 	
  *		Queen 1 at index 0 is in row 1, column 2 
  *		Queen 2 at index 1 is in row 2, column 4
  *		Queen 3 at index 2 is in row 3, column 1
  *		Queen 4 at index 3 is in row 4, column 3
  *
- *
- *
- *
+ * 
  *
  * @author Hope Fetrow
  * @date June 2021
- *
- *
+ *  
  */
 public class Main {
 	static int col[] = null;
