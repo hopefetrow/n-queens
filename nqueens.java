@@ -12,13 +12,11 @@ import java.util.Scanner;
  * 	before finding all solutions, or the number of nodes that will be in the pruned state space tree, 
  *	is obtained using the Monte Carlo technique. 
  *
- * 
  * INPUT: 
  * 
  *	The number of queens to find placement for which corresponds to number of rows and columns 
  *	Entering 4 results in finding all solutions to placing 4 queens on a 4x4 chessboard that are not 
  *	in the same diagonal,row, or column. 
- *
  *
  * OUTPUT:
  *  
