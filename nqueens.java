@@ -1,5 +1,3 @@
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
@@ -61,7 +59,7 @@ public class Main {
 
 		// get user input for number of queens from console
 		Scanner input = new Scanner(System.in);
-		System.out.print("Number of queens (< 1 to quit): ");
+		System.out.print("\n\nNumber of queens (0 to quit): ");
 		n = input.nextInt();
 		System.out.println();
 
