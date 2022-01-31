@@ -34,9 +34,9 @@ import java.util.Scanner;
  * that will be checked, actual number of nodes checked while searching
  *	
  *  
- *	| Each solution consists of an array of integers where each value represents
- *	| the column placement for the queen in that
- * 	| row number (which corresponds to the index).
+ *	| Each solution consists of an array of integers where each value 
+ *	| represents the column placement for the queen in that row number
+ *	| (which corresponds to the index).
  * 	|
  *	| For example, the solution [2 4 1 3] for 4-queens problem represents:
  * 	|  	Queen 1 at index 0 is in row 1, column 2
