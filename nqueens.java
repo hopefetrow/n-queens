@@ -5,7 +5,10 @@ import java.util.Random;
 import java.util.Scanner;
 
 /**
- *------- DESCRIPTION 
+ * -------------------------------------------------------------------------
+ * DESCRIPTION: 
+ * -------------------------------------------------------------------------
+ * Problem:
  * Given an n x n chessboard, how many different ways can you place n queens, 
  * such that no two queens are in the same row, column, and diagonal.
  * 
@@ -17,16 +20,16 @@ import java.util.Scanner;
  * Before solving, the estimated number of nodes that will be checked before
  * finding all possible solutions is obtained, which is used to estimate the
  * efficiency of backtracking for the n-queens problem.
- * 
- *------- INPUT 
- * 
+ * -------------------------------------------------------------------------
+ * INPUT: 
+ * -------------------------------------------------------------------------
  * The number of queens to place or 0 to quit. 
  * 
  * 	| This corresponds to number of rows and columns in the chessboard. 
  *	| Example: 4 queens --> 4x4 chessboard
- *
- *------- OUTPUT 
- * 
+ * -------------------------------------------------------------------------
+ * OUTPUT: 
+ * -------------------------------------------------------------------------
  * Solutions, total number of solutions, estimate for number of nodes
  * that will be checked, actual number of nodes checked while searching
  *	
