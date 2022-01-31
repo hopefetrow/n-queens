@@ -6,8 +6,8 @@ import java.util.Scanner;
 
 /**
  *------- DESCRIPTION 
- * The n-queens problem: Given an n x n chessboard, how many different ways can you 
- * place n queens, such that no two queens are in the same row, column, and diagonal.
+ * Given an n x n chessboard, how many different ways can you place n queens, 
+ * such that no two queens are in the same row, column, and diagonal.
  * 
  * This program produces all solutions to the n-Queens problem using DFS with
  * backtracking, where once a path is determined to lead to a non-solution, or
@@ -20,8 +20,10 @@ import java.util.Scanner;
  * 
  *------- INPUT 
  * 
- * The number of queens to place. This corresponds to number of rows and
- * columns in the chessboard. (n=4 --> 4x4 chessboard)
+ * The number of queens to place or 0 to quit. 
+ * 
+ * 	| This corresponds to number of rows and columns in the chessboard. 
+ *	| Example: 4 queens --> 4x4 chessboard
  *
  *------- OUTPUT 
  * 
