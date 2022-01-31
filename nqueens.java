@@ -5,80 +5,78 @@ import java.util.Random;
 import java.util.Scanner;
 /**
  * DESCRIPTION:
- *
- *	This program produces all solutions to the n-Queens problem using DFS with backtracking. 
  * 
- * 	Before finding solutions, the estimated number of nodes that will be checked 
- * 	before finding all solutions, or the number of nodes that will be in the pruned state space tree, 
- *	is obtained using the Monte Carlo technique. 
- *
+ * 		This program produces all solutions to the n-Queens problem using DFS with backtracking. 
+ * 
+ * 		Before finding solutions, the estimated number of nodes that will be checked 
+ * 		before finding all solutions, or the number of nodes that will be in the pruned state space tree, 
+ * 		is obtained using the Monte Carlo technique. 
+ * 
  * INPUT: 
  * 
- *	The number of queens to find placement for which corresponds to number of rows and columns 
- *	Entering 4 results in finding all solutions to placing 4 queens on a 4x4 chessboard that are not 
- *	in the same diagonal,row, or column. 
+ * 		The number of queens to find placement for which corresponds to number of rows and columns 
+ * 		Entering 4 results in finding all solutions to placing 4 queens on a 4x4 chessboard that are not 
+ * 		in the same diagonal,row, or column. 
  *
  * OUTPUT:
  *  
- *	The solutions, the total number of solutions, the Monte Carlo estimate for number of nodes that will be checked, 
- *	and the actual number of nodes checked while searching is printed. 
+ * 		The solutions, the total number of solutions, the Monte Carlo estimate for number of nodes that will be checked, 
+ *		and the actual number of nodes checked while searching is printed. 
  *
- * 	Each solution consists of an array of integers where each value represents the column placement for the queen in that
- * 	row number (which corresponds to the index). 
+ * 		Each solution consists of an array of integers where each value represents the column placement for the queen in that
+ * 		row number (which corresponds to the index). 
  *		
- *	For example, the solution [2 4 1 3] for 4-queens problem represents: 
- *		Queen 1 at index 0 is in row 1, column 2 
- *		Queen 2 at index 1 is in row 2, column 4
- *		Queen 3 at index 2 is in row 3, column 1
- *		Queen 4 at index 3 is in row 4, column 3
+ *		For example, the solution [2 4 1 3] for 4-queens problem represents: 
+ * 			Queen 1 at index 0 is in row 1, column 2 
+ *			Queen 2 at index 1 is in row 2, column 4
+ *			Queen 3 at index 2 is in row 3, column 1
+ *			Queen 4 at index 3 is in row 4, column 3
  *
  * 
- *
  * @author Hope Fetrow
  * @date June 2021
  *  
  */
 public class Main {
 	static int col[] = null;
-	// for counts
-	static int total_promising;
+	// for counts   
 	static int total_checked;
-	static int fact;
 	static int total_solutions;
-	// for estimate method
-	static int[] promChildren;
+	// for estimate 
+	static int[] promising_children;
 	static int n;
 
 	
 	public static void main(String[] args) {
 
-		// get user input for number of queens
+		// get user input for number of queens from console
 		Scanner input = new Scanner(System.in);
 		System.out.print("Number of queens (< 1 to quit): ");
 		n = input.nextInt();
 		System.out.println();
 
-        	// while user input is an int greater than 0
+        // while user input is an int greater than 0
 		while (n > 0) { 
+			// print number of queens entered by user 
 		    System.out.println("\n\nNumber of queens: " + n + "\n");
-			total_promising = 0;
+			// initialize/reset counters to 0 
 			total_checked = 0;
 			total_solutions = 0;
-			// for finding and storing one solution
-			int[] partialSol = new int[n];
+			// to store our solution in temporarily 
+			int[] temp = new int[n];
 			
 			// function call to get estimate
 			long estimated = estimate(n);
 	
 			try {
 				// function call to solve
-				solve(partialSol, 0);
+				solve(temp, 0);
 			} catch (Exception e) {
 				System.out.println("Error while solving problem");
 				e.printStackTrace();
 			}
 
-			// printing results
+			// print results
 			System.out.println("\nNumber of solutions: " + total_solutions);
 			System.out.println("Estimated nodes checked: " + estimated);
 			System.out.println("Actual nodes checked: " + total_checked);
@@ -88,6 +86,7 @@ public class Main {
 			
 			// grab user input
 			n = input.nextInt();
+			
 		}
 		input.close();
 	}
@@ -108,16 +107,14 @@ public class Main {
 				// increment solution counter
 				total_solutions++;
 			} else
-				// see if queen in row (i+1) can be placed for each of the n columns
+				// for this row, check each column position to see if queen can be placed  
 				for (int i = 1; i <= x.length; i++) {
 					x[k] = i;
-					// increment nodes checked during backtracking counter
+					// increment counter for the total number of nodes checked while searching
 					total_checked++;
-					// if node is promising
+					// check if current position is promising
 					if (promising(x, k)) {
-						// add to promising nodes count
-						total_promising++;
-						// then go down in tree
+						// if promising, then go down in tree (next row)
 						solve(x, k + 1);
 					}
 				}
@@ -128,8 +125,8 @@ public class Main {
 
 	/**
 	 * Determines if node does not lead to a solution based on from conflicts with
-	 * earlier values. Once a node is decided to be a dead end, the method returns
-	 * false or true if node is found to be promising.
+	 * earlier values. If a node is decided to be a dead end, the method returns
+	 * false, otherwise it returns true.
 	 *
 	 * @param x the current partial solution
 	 * @param i the position to be tested for conflict with earlier values
@@ -146,9 +143,9 @@ public class Main {
 	}
 
 	/**
-	 * Uses the monte carlo technique to estimate the number of nodes that will be
+	 * Uses the Monte Carlo technique to estimate the number of nodes that will be
 	 * in the pruned state space tree, or the number of nodes that will be checked
-	 * before finding all possible solutions. It uses the same promise method that
+	 * before finding all possible solutions. It uses the same promise() method that
 	 * the backtracking algorithm does.
 	 *
 	 * @param n number of queens
@@ -162,7 +159,7 @@ public class Main {
 		// to work with current col
 		col = new int[n + 1];
 		// for storing promising children (length of factor value for n)
-		promChildren = new int[n];
+		promising_children = new int[n];
 		while (m != 0 && i != n) {
 		    // product of promising children
 			mprod = mprod * m;
@@ -179,14 +176,14 @@ public class Main {
 				    // increment number of promising children
 					m++; 
 					// add to set of promising children
-					promChildren[(int) m] = j;
+					promising_children[(int) m] = j;
 				}
 			}
 			// if there are promising children
 			if (m != 0) { 
 				// randomly selection from promising children
-				int rnd = new Random().nextInt(promChildren.length);
-				j = promChildren[rnd];
+				int rnd = new Random().nextInt(promising_children.length);
+				j = promising_children[rnd];
 				col[i] = j;
 			}
 		}
@@ -195,8 +192,6 @@ public class Main {
 
 	/**
 	 * Prints a solution to the n-queens problem
-	 * 
-	 * @param x a solution consisting of the queens column placement, where each index represents the corresponding row/queen for that row (row # = index #)
 	 */
 	public static void printSolution(int[] x) {
 		for (int i = 0; i < x.length; i++) {
