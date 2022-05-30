@@ -5,12 +5,10 @@ Given an n x n chessboard, how many different ways can you place n queens, such 
 Final Project for CS 4310 - Design and Analysis of Algorithms
 
 <h2> Objective </h2>
-Solve with a backtracking algorithm that uses a promising function. Make a timing graph Time vs. n. Include graph and observations in your report. Implement the Monte Carlo estimate() algorithm for estimating the number of nodes in the tree. Keep track of the actual number of nodes generated when backtracking and compare to the estimated number.  
+Solve with DFS and backtracking. Make a timing graph 'Time vs. n' and document observations. Implement the Monte Carlo estimate() algorithm for estimating the number of nodes in the tree. Keep track of the actual number of nodes generated when backtracking and compare to the estimated number.  
 
 <h2> Description </h2>
-The promising() function prevents the continuation down a dead end path by only continuing traversal down path if the node is promising. If a node isn’t promising, then it isn’t travelled to and a different path is chosen, where the node is promising. This drastically reduces the number of nodes that are checked while finding all possible solutions. 
-
-The estimate() function uses the Monte Carlo method and can be used to determine if backtracking would be an efficient choice for solving a problem. In this implementation, estimate() returns the estimated number of nodes that would be checked to find all possible solutions. 
+DFS is used with backtracking to reduce upper bound on n-Queens problem. An estimate algorithm is also implemented to estimate efficiency of backtracking by estimating number of nodes that will be checked before finding all possible solutions.
 <br>
 <h3><strong> Input: </strong></h3>
 Number of queens or 0 to quit 
