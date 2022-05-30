@@ -29,6 +29,8 @@ Copy and paste the contents of nqueens.java into editor of a java IDE or online 
 Hope Fetrow 
 
 <h2> What I learned </h2>
-How to implement backtracking with a promising method and how it can greatly reduce the search time for DFS in some cases, in this case from O(n<sup>n</sup>) to O(n!). How the Monte Carlos Estimate can determine if backtracking is a good choice for an algorithm. 
-  
+<ul>
+	<li>Backtracking can greatly reduce the search time for DFS in some cases, in this case from O(n<sup>n</sup>) to O(n!) </li>
+	<li>The Monte Carlos Estimate helps when determining if backtracking is a good choice for an algorithm </li>
+</ul>
   
