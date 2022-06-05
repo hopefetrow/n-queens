@@ -59,7 +59,9 @@ public class Main {
 	static int n;
 
 	public static void main(String[] args) {
-
+        	int[] temp;
+		long estimate;
+		
 		// get user input for number of queens from console
 		Scanner input = new Scanner(System.in);
 		System.out.print("\n\nNumber of queens (0 to quit): ");
@@ -75,10 +77,10 @@ public class Main {
 			checkedCount = 0;
 			solutionCount = 0;
 			// to build a solution
-			int[] temp = new int[n];
+			temp = new int[n];
 
 			// function call to get estimate
-			long estimate = estimate(n);
+			estimate = estimate(n);
 
 			// function call to solve
 			try {
@@ -111,7 +113,6 @@ public class Main {
 			if (k >= x.length) {
 				// print the solution
 				printSolution(x);
-
 				// increment solution counter
 				solutionCount++;
 			} else
@@ -164,7 +165,7 @@ public class Main {
 	 */
 	public static long estimate(int n) {
 		// indices for col[]
-		int i = 0, j = 1;
+		int i = 0, j = 1, rnd = 0;
 
 		/* estimate variables need to start at 1 or else mprod would always be 0 */
 
@@ -174,7 +175,6 @@ public class Main {
 		long mprod = 1;
 		// number of nodes in the estimation of state space tree size
 		long nodeCount = 1;
-
 		// create current col
 		col = new int[n + 1];
 		// for storing promising children (length of factor value for n)
@@ -203,7 +203,7 @@ public class Main {
 			// check if there are promising children
 			if (nodeCount != 0) {
 				// randomly select from promising children
-				int rnd = new Random().nextInt(est.length);
+				rnd = new Random().nextInt(est.length);
 				j = est[rnd];
 				col[i] = j;
 			}
