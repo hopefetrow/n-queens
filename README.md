@@ -1,5 +1,5 @@
 # N-queens
-Given an n x n chessboard, how many different ways can you place n queens, such that no two queens are in the same row,       column, and diagonal.
+Given an nxn chessboard, how many different ways can you place n queens, such that no two queens are in the same row,       column, and diagonal.
 
 <h2> Purpose </h2>
 Final Project for CS 4310 - Design and Analysis of Algorithms
