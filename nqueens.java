@@ -104,8 +104,8 @@ public class Main {
 	/**
 	 * Finds a placement for a queen, if no queen found, nothing happens.
 	 *
-	 * @param x the current partial solution Its length is the problem size.
-	 * @param k the next position to be assigned.
+	 * @param x the current partial solution
+	 * @param k the row position of node
 	 */
 	public static void solve(int[] x, int k) {
 		try {
