@@ -9,11 +9,11 @@ Solve with DFS and backtracking. Make a timing graph 'Time vs. n' and document o
 
 <h2> Description </h2>
 DFS is used with backtracking to reduce upper bound on n-Queens problem. An estimate algorithm is also implemented to estimate efficiency of backtracking by estimating number of nodes that will be checked before finding all possible solutions.
-<br>
-<h3><strong> Input: </strong></h3>
-Number of queens or 0 to quit 
-<h3><strong> Output: </strong></h3>
-The solution(s), the total number of solutions, the actual number of nodes generated, and the estimated number of nodes that would be generated. Each 		solution consists of an array of integers where each integer represents the column choice for the queen in the row corresponding to array index in the 		solution and the results from the Monte Carlo estimate. For example, <br><br>
+<br><br>
+<strong> Input: </strong><br>
+Number of queens or 0 to quit<br><br>
+<strong> Output: </strong><br>
+The solution(s), the total number of solutions, the actual number of nodes generated, and the estimated number of nodes that would be generated. Each 	solution consists of an array of integers where each integer represents the column choice for the queen in the row corresponding to array index in the 	solution and the results from the Monte Carlo estimate. For example, <br><br>
 
 The solution [2 4 1 3] for the 4-queens problem is saying:<br>
 <ul>
@@ -22,7 +22,7 @@ The solution [2 4 1 3] for the 4-queens problem is saying:<br>
 	<li>Queen 3 at index 2 is in row 3, column 1. </li>
 	<li>Queen 4 at index 3 is in row 4, column 3. </li>
 </ul>
-<h2> To run: </h2>
+<h2>Program execution: </h2>
 Copy and paste the contents of nqueens.java into editor of a java IDE or online java compiler (https://www.onlinegdb.com/online_java_compiler). 
 
 <h2> Developers </h2>
