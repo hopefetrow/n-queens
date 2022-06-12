@@ -22,7 +22,7 @@ The solution [2 4 1 3] for the 4-queens problem is saying:<br>
 	<li>Queen 3 at index 2 is in row 3, column 1. </li>
 	<li>Queen 4 at index 3 is in row 4, column 3. </li>
 </ul>
-<h2> Installation </h2>
+<h2> To run: </h2>
 Copy and paste the contents of nqueens.java into editor of a java IDE or online java compiler (https://www.onlinegdb.com/online_java_compiler). 
 
 <h2> Developers </h2>
